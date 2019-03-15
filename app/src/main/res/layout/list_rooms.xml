@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:layout_marginBottom="@dimen/normal_margin"
+                                             android:layout_marginEnd="@dimen/normal_margin"
+                                             android:layout_marginTop="@dimen/normal_margin"
+                                             android:orientation="vertical">
+
+    <View
+        android:id="@+id/viewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:background="@drawable/list_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cntContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:paddingBottom="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="@+id/viewBackground"
+        app:layout_constraintStart_toStartOf="@id/viewBackground"
+        app:layout_constraintTop_toTopOf="@+id/viewBackground">
+
+        <TextView
+            android:id="@+id/name_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:padding="@dimen/lowest_margin"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cntContent"
+            tools:text="@string/room_name"/>
+
+        <TextView
+            android:id="@+id/department_room_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:padding="@dimen/lowest_margin"
+            android:text="@string/department_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_room"/>
+
+        <TextView
+            android:id="@+id/department_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/lowest_margin"
+            android:padding="@dimen/lowest_margin"
+            android:text="@string/room_name"
+            app:layout_constraintStart_toEndOf="@id/department_room_label"
+            app:layout_constraintTop_toBottomOf="@id/name_room"/>
+
+        <TextView
+            android:id="@+id/type_room_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/medium_margin"
+            android:padding="@dimen/lowest_margin"
+            android:text="@string/type_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/department_room"/>
+
+        <TextView
+            android:id="@+id/type_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/lowest_margin"
+            android:padding="@dimen/lowest_margin"
+            android:text="@string/room_name"
+            app:layout_constraintStart_toEndOf="@id/type_room_label"
+            app:layout_constraintTop_toBottomOf="@id/department_room"/>
+
+        <ImageView
+            android:id="@+id/hide_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/lowest_margin"
+            android:padding="@dimen/lowest_margin"
+            android:src="@drawable/ic_book_room"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@id/type_room"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
